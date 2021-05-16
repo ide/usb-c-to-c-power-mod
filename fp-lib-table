@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name FlexPCB)(type KiCad)(uri ${KIPRJMOD}/FlexPCB.pretty)(options "")(descr ""))
+)
