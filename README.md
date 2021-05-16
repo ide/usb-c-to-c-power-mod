@@ -6,6 +6,10 @@ However, some devices will not draw power when using a USB-C-to-C cable connecte
 
 Wouldn't it be great to be able to add these resistors and enable USB-C-to-C power? This mod does just that. It is a small flex PCB with pads for two 5.1kohm pull-down resistors between CC1 and CC2, respectively, and GND.
 
+### Circuit
+<img src="images/circuit.png" alt="Circuit schematic" width="200" height="200">
+
+### PCB
 <img src="images/pcb-preview.png" alt="PCB preview" width="585" height="199">
 
 ## Supported devices
