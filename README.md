@@ -6,6 +6,8 @@ However, some devices will not draw power when using a USB-C-to-C cable connecte
 
 Wouldn't it be great to be able to add these resistors and enable USB-C-to-C power? This mod does just that. It is a small flex PCB with pads for two 5.1kohm pull-down resistors between CC1 and CC2, respectively, and GND.
 
+<img src="images/pcb-preview.png" alt="PCB preview" width="585" height="199">
+
 ## Supported devices
 
 This PCB can fit into a wide variety of devices whose **USB-C connectors soldered onto 12 pads**. (Note: these connectors are sometimes described as having "16+8 dummy pins". Four of the VBUS pins are wired to two VBUS pads and four of the GND pins are wired to two GND pads, which is why the USB-C port has 16 active pins but only 12 solder pads.) The number of solder leads varies between USB-C connectors; be sure to inspect the main PCB of your device and ensure the USB-C connector has 12 soldered leads. If your device's USB-C connector has a different number of leads, this PCB will not work; however, the concept of connecting two 5.1kohm resistors between the CC pins and ground would work if you were to alter this mod.
