@@ -1,5 +1,7 @@
 # USB-C-to-C Power Mod Flex PCB
 
+<img src="images/pcb-close-up.jpeg" alt="Flex PCB and SMD resistors with a USB-C cable for scale" width="320" height="240">
+
 Many devices have a USB-C connector to charge or power them. This is very convenient given the popularity of USB-C, its reversible cable design, and sturdy, compact design.
 
 However, some devices will not draw power when using a USB-C-to-C cable connected to a spec-compliant charger, but will when using a USB-A-to-C cable. The USB-C specification requires upstream facing ports (UFPs), the port of the device receiving power, to connect pull-down resistors to the configuration channel (CC) pins. These missing pull-down resistors are a common reason why devices can draw power with A-to-C cables but not C-to-C ones.
@@ -10,7 +12,7 @@ Wouldn't it be great to be able to add these resistors and enable USB-C-to-C pow
 <img src="images/circuit.png" alt="Circuit schematic" width="200" height="200">
 
 ### PCB
-<img src="images/pcb-preview.png" alt="PCB preview" width="585" height="199">
+<img src="images/pcb-preview.png" alt="PCB preview" width="468" height="159">
 
 ## Supported devices
 
@@ -33,10 +35,13 @@ Flex PCBs are more expensive than rigid PCBs but are much thinner, making this m
   * Preferably ±10% or better tolerance
   * [Panasonic ERJ-2GEJ512X](https://www.digikey.com/en/products/detail/ERJ-2GEJ512X/P5.1KJCT-ND/147043)
 
+<img src="images/osh-park-pcbs.jpeg" alt="Flex PCBs from OSH Park" width="320" height="240">
+
 ### Tools
 
-* A multimeter that can measure continuity and resistance
-* A fine-tipped soldering iron, solder, and flux
+* A multimeter that can measure continuity, resistance, and voltage
+* A fine-tipped soldering iron, solder, flux, and solder braid
+* Q-tips and 91-99% isopropyl alcohol or electrical cleaner
 * Precision tweezers
 
 ### Skills
@@ -49,13 +54,31 @@ Knowledge of electronic circuits and how to use a multimeter is also recommended
 
 The goal is to add one resistor between pad A5 (CC1) and GND and one resistor between pad B5 (CC2) and GND. First use a multimeter to test for continuity and measure resistance between CC1 and GND to ensure the circuit is open. Do the same with CC2 and GND. You may find it helpful to refer to [a diagram](https://gct.co/files/drawings/usb4105.pdf) of the USB-C connector to identify the pads. If the circuit is closed, do not install this mod; the point of this mod is to install missing pull-down resistors.
 
-Solder the two SMD resistors to the flex PCB. Use tweezers, patience, and a nicely tinned soldering iron. Measure the resistance between the flex PCB's pads to ensure it reads 5.1kΩ between each CC pad and its neighboring GND pad.
+Lightly tin the pads on the underside of the flex PCB. This will make it easier to establish a good electrical connection with the USB-C connector. Wick away excess solder with your solder braid to prevent it from bridging the connector's pads during installation.
 
-Align the flex PCB with the pins along the back of the USB-C connector. The flex PCB's pads should overlap slightly with the USB-C connector's pads and line up with the two GND pads, CC1, and CC2. Solder the flex PCB to the USB-C connector.
+<img src="images/tinned-pads.jpeg" alt="Tinned pads on the PCB's underside" width="320" height="240">
+
+Solder the two SMD resistors to the flex PCB. Use tweezers, patience, and a nicely tinned soldering iron. Measure the resistance between the flex PCB's pads to ensure it reads 5.1kΩ between each CC pad and its neighboring GND pad. Clean away the flux with isopropyl alcohol and Q-tips.
+
+<img src="images/soldered-resistors.jpeg" alt="Pull-down resistors soldered on" width="320" height="240">
+
+Align the flex PCB with the pins along the back of the USB-C connector. The flex PCB's pads should overlap slightly with the USB-C connector's pads and line up with the two GND pads, CC1, and CC2.
+
+Solder the flex PCB to the USB-C connector. Start by soldering one pad down to hold it in place and then solder the rest of the pads. Once the pads are soldered down, it may help to revisit each of them: carefully press down with tweezers, gently reflow each pad for a few seconds, and hold your tweezers in place for a moment after lifting your iron to establish a strong solder joint. The goal is to create a good electrical connection between the flex PCB's pads and the USB-C connector's pads.
+
+<img src="images/mod-installed.jpeg" alt="Flex PCB mod installed over the USB-C connector" width="320" height="240">
 
 Measure the resistance between the CC pins of the USB-C connector and GND. It should read 5.1kΩ for each pin. As a sanity check, the resistance between the two CC pins should be 10.2kΩ.
 
+Check for short circuits between each of the USB-C connector's neighboring pins. Ensure none of the pins are bridged, including underneath the flex PCB. You must clean up solder bridges before powering your device.
+
+Use isopropyl alcohol to leave your PCB clean before reassembling your device.
+
 Plug in a USB-C-to-C cable. If all has gone well, your device should receive power. There should be a 5V potential between VBUS and GND. (Do not attempt to measure the current across VBUS and GND in parallel with a multimeter or you will likely short circuit and damage your device.)
+
+Gently wiggle the connector to verify the connection is reliable. An unreliable connection may indicate weak solder joints that need to be reflowed. Unplug the USB-C cable and flip it over to check that your device receives power in both orientations. 
+
+<img src="images/monstargear-alu-xo-v3.jpeg" alt="Keyboard powered with USB-C-to-C cable" width="480" height="360">
 
 ## Help and support
 
